@@ -1,12 +1,13 @@
 name: Web verification
 
-on:
-  pull_request:
-    paths:
-      - "web/**"
-      - ".github/workflows/web-verification.yml"
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - "web/**"
+#       - ".github/workflows/web-verification.yml"
+#   workflow_dispatch:
+# 
 permissions:
   contents: read
 

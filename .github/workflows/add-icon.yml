@@ -1,45 +1,46 @@
 name: Add Icon to Collection
 run-name: ${{ inputs.batchId && format('Publish {0}', inputs.batchId) || 'Add Icon to Collection' }}
 
-on:
-  workflow_call:
-    inputs:
-      submissionIds:
-        description: Comma-separated IDs of the PocketBase submissions to import
-        required: true
-        type: string
-      batchId:
-        description: Dashboard publish batch ID (optional)
-        required: false
-        default: ""
-        type: string
-      dryRun:
-        description: When true, skip writes/commit/PocketBase status update
-        required: false
-        default: false
-        type: boolean
-    secrets:
-      PB_URL:
-        required: true
-      PB_ADMIN_TOKEN:
-        required: true
-  workflow_dispatch:
-    inputs:
-      submissionIds:
-        description: Comma-separated IDs of the PocketBase submissions to import
-        required: true
-        type: string
-      batchId:
-        description: Dashboard publish batch ID (optional)
-        required: false
-        default: ""
-        type: string
-      dryRun:
-        description: When true, skip writes/commit/PocketBase status update
-        required: false
-        default: false
-        type: boolean
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       submissionIds:
+#         description: Comma-separated IDs of the PocketBase submissions to import
+#         required: true
+#         type: string
+#       batchId:
+#         description: Dashboard publish batch ID (optional)
+#         required: false
+#         default: ""
+#         type: string
+#       dryRun:
+#         description: When true, skip writes/commit/PocketBase status update
+#         required: false
+#         default: false
+#         type: boolean
+#     secrets:
+#       PB_URL:
+#         required: true
+#       PB_ADMIN_TOKEN:
+#         required: true
+#   workflow_dispatch:
+#     inputs:
+#       submissionIds:
+#         description: Comma-separated IDs of the PocketBase submissions to import
+#         required: true
+#         type: string
+#       batchId:
+#         description: Dashboard publish batch ID (optional)
+#         required: false
+#         default: ""
+#         type: string
+#       dryRun:
+#         description: When true, skip writes/commit/PocketBase status update
+#         required: false
+#         default: false
+#         type: boolean
+# 
 concurrency:
   group: add-icon-queue
   cancel-in-progress: false

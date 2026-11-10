@@ -1,8 +1,9 @@
 name: Compress Icons
 
-on:
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+# 
 jobs:
   compress_icons:
     runs-on: ubuntu-latest

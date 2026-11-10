@@ -1,9 +1,10 @@
 name: Validate and Preview Icons
 
-on:
-  pull_request:
-    types: [opened, synchronize]
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     types: [opened, synchronize]
+# 
 jobs:
   validate_icons:
     runs-on: ubuntu-latest

@@ -1,30 +1,31 @@
 name: Build images
 
-on:
-  pull_request:
-    paths:
-      - "web/**"
-      - "metadata.json"
-      - "svg/**"
-      - "png/**"
-      - "webp/**"
-      - ".github/workflows/build-images.yml"
-      - ".github/workflows/docker.yml"
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-      ref:
-        type: string
-        default: main
-      publish:
-        type: boolean
-        default: false
-    outputs:
-      digest:
-        value: ${{ jobs.merge.outputs.digest }}
-      revision:
-        value: ${{ jobs.prepare.outputs.revision }}
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - "web/**"
+#       - "metadata.json"
+#       - "svg/**"
+#       - "png/**"
+#       - "webp/**"
+#       - ".github/workflows/build-images.yml"
+#       - ".github/workflows/docker.yml"
+#   workflow_dispatch:
+#   workflow_call:
+#     inputs:
+#       ref:
+#         type: string
+#         default: main
+#       publish:
+#         type: boolean
+#         default: false
+#     outputs:
+#       digest:
+#         value: ${{ jobs.merge.outputs.digest }}
+#       revision:
+#         value: ${{ jobs.prepare.outputs.revision }}
+# 
 permissions:
   contents: read
 
